@@ -41,7 +41,7 @@ router.get('/:twitterName', function(req, res, next) {
           const { screen_name: retweetUsername } = retweetUser;
           orgUsername = retweetUsername;
         }
-        const tweetData = { id, time, text, username, retweet: retweetObj !== null, orgUsername };
+        const tweetData = { id, time, text, username, retweet: orgUsername !== null, orgUsername };
         return tweetData;
       })
       res.send(tweetsData);
